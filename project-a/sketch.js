@@ -9,7 +9,7 @@ let currentH = 200;
 let targetH = 200;       
 let currentFade = 100;   
 function setup() {
-  let canvas = createCanvas(10000, 500);
+  let canvas = createCanvas(800, 500);
   canvas.parent("p5-canvas-container")
   colorMode(HSB);
   c = color(0);
