@@ -1,0 +1,97 @@
+<!-- 
+Template for IMA's Creative Coding Lab 
+
+Project A: Generative Creatures
+CCLaboratories Biodiversity Atlas 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>[ NAME OF YOUR CREATURE ]</title>
+
+    <!-- allow special characters, including Arabic, Chinese, Korean, Japanese, etc. -->
+    <meta charset="UTF-8">
+    <!-- link the style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- import p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script>
+        // prevent scrolling when spacebar and arrow keys are pressed.
+        window.addEventListener("keydown", function (e) { if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } }, false);
+    </script>
+</head>
+
+<body>
+    <!-- title -->
+    <div id="title-wrapper">
+        <h1 class="headline black">[ Meow-Rain ]</h1>
+    </div>
+
+    <!-- main content -->
+    <div id="main-wrapper">
+        <div id="p5-canvas-container">
+            <!-- This is where your p5 sketch will be appended and appear! -->
+        </div>
+        <div class="two-columns">
+            <div class="left">
+                <h3 class="red">Scientific Name:</h3>
+                <p>Felis Pluvia Interpolatus</p>
+
+                <h3 class="red">Discovered by / at:</h3>
+                <p>Jiaying Liu, a rainy night in Digital Jade Dragon Snow Mountain</p>
+
+                <h3 class="green">Family:</h3>
+                <p>Interpolated Aquatic Feline (A branch of the Generative Raindrop family characterized by high agility and mood-based color shifts).</p>
+            </div>
+            <div class="right">
+                <h3 class="green">Habitat:</h3>
+                <p>Born: Rainy nights in mountainous areas
+Live: In the sky</p>
+
+                <h3 class="green">Appearance:</h3>
+                <p>A raindrop-like creature. Its head features two observant black eyes that track movement with precision. It typically glows with a white hue, while approaching, with a calm, cyan-blue hue. It will also change color when touched and disappear in the surrondings when continuously touched. </p>
+
+                <h3 class="green">Key Characteristics:</h3>
+                <ul>
+                    <li>Like a cat, curious about new things but also afriad of them</li>
+                    <li>Can detect people’s approaching</li>
+                    <li>Change in speed and color when touched</li>
+                    <li>Can blend into the environment in extremely nervous status</li>
+                </ul>
+            </div>
+        </div>
+        <div class="one-column">
+            <p>
+                <span class="yellow">What we know so far about [ NAME OF YOUR CREATURE ]?</span>
+                The Meow-Rain is a complex "tsundere" entity that balances an innate curiosity with a fierce need for 
+                personal territory. Biologically, it is built on a nervous system of linear interpolation, meaning it never reacts abruptly; 
+                even its most sudden movements follow a path of mathematical grace. Observations show it utilizes a 300-pixel sensory radius to detect intruders, 
+                calculating a repulsion force that allows it to glide away while maintaining its elegant, oscillating form. Despite its elusive nature, 
+                its shifting bioluminescence suggests a deep emotional spectrum, transitioning from a tranquil blue to erratic, 
+                vibrant hues when its internal logic is disrupted by external stimuli.
+                <br>
+                <span class="yellow">Guidelines for human interaction with this creature</span> Interaction with a Meow-Rain is a delicate dance of distance and touch. 
+                Users can "tease" the creature by moving the cursor near its 800-pixel detection zone, causing it to pivot and maintain a respectful gap. A single click acts as a "startle" reflex, 
+                triggering a sudden mutation in its base color, which then slowly "cools" back to its signature blue through a process of visual calming.
+                 Most remarkably, if a user holds the mouse button while within its inner circle, the Meow-Rain enters a "cloaking" defense mode—its oscillation speed triples in a frantic blur, and its body fades into total darkness, effectively hiding in plain sight until the pressure is released.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="black">
+        <p>A CCLab project made by Jiaying Liu in 2026Spring</p>
+    </div>
+
+    <!-- Home: Link back to the ATLAS page-->
+    <div id="home">
+        <a href="https://cclab.work/atlas">Back to the ATLAS</a>
+    </div>
+
+    <!-- Include your sketch.js file here -->
+    <script src="sketch.js" type="text/javascript"> </script>
+</body>
+
+</html>
