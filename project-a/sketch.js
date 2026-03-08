@@ -24,30 +24,9 @@ canvas.parent("p5-canvas-container");
 function draw() {
   background(0);
   rainMountain()
-  //mountain()
   lightening()
   drawCreature(width / 2, height / 2-80); 
 }
-
-// function mousePressed() {
-//   if (r1 !== 190) {
-//     r1 = 190; 
-//   } else {
-//     r1 = random(0, 255);
-//   }
-//     if (g1 !== 100) {
-//     g1 = 100; 
-//   } else {
-//     g1 = random(0, 360);
-//   }
-//   if (b_val1 !== 255) {
-//     b_val1 = 255; 
-//   } else {
-//     b_val1 = random(0, 360);
-//   }
-// }
-//   targetH = random(0, 360);
-// }
 
 function drawCreature(x, y) {
    
@@ -63,19 +42,14 @@ function drawCreature(x, y) {
   let curX = x + offsetX;
   let curY = y + offsetY;
   
-   //currentH = lerp(currentH, targetH, 0.05);
-  
-  //let targetFade;
   let z = map(sin(frameCount * 0.005), -1, 1, 0, 1);
 let r = lerp(255, 197, z);
 let g = lerp(83, 31, z);
 let b_val = lerp(24, 96, z); 
 if (d < 50 && mouseIsPressed) {
   
-   //targetFade = 0; 
   
 } else {
-//   //targetFade = 255;
   r1=190
   g1=100
   b_val1=255
@@ -83,9 +57,6 @@ if (d < 50 && mouseIsPressed) {
   r1 = lerp(r1, r, 0.1);
   g1 = lerp(g1, g, 0.1);
   b_val1=lerp(b_val1, b_val, 0.1)
-  //currentFade = lerp(currentFade, targetFade, 0.1);
- 
-  
 
   push();
    if(keyIsPressed&& key === 'l'){
@@ -131,8 +102,6 @@ if (d < 50 && mouseIsPressed) {
   }
   let lookX = map(mouseX, 0, width, 8, -8);
   let lookY = map(mouseY, 0, height, -8, 4);
-  
-  //fill(r,g,b_val);
    
   noStroke();
   for (let i = 0; i < 30; i++) {
@@ -143,8 +112,6 @@ if (d < 50 && mouseIsPressed) {
 
     circle(px, py, s);
     fill(0);
-    // circle(px - 5 + lookX, py + 5 + lookY, 0.2 * s);
-    // circle(px + 5 + lookX, py + 5 + lookY, 0.2 * s);
   }
   let headPx = 7 * sin(frameCount * speed + 29 * 0.1);
   let headPy = map(29, 0, 40, 0, 35);
@@ -165,8 +132,6 @@ if (d < 50 && mouseIsPressed) {
 function rainMountain() {
   push()
 background(10, 20, 60);
-//let colorRain = color(228, 83, 24, 60);
-//let colorMount = color(228, 83, 24, 50);
 let z = map(sin(frameCount * 0.005), -1, 1, 0, 1);
 let r1=255
 r = lerp(228, 197, z);
@@ -198,11 +163,6 @@ for (let x = s/2; x < width; x += s) {
 
 t += 1;
 }
-
-
-   
- 
-//  mount 1
   for (let x = 0; x <= width; x += 1) {
   
   //1
