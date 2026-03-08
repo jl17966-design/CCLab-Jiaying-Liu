@@ -5,7 +5,7 @@ Project A: Generative Creatures
 CCLaboratories Biodiversity Atlas 
 */
 
-let r1=255
+ let r1=255
   let g1=255
   let b_val1=255
 let t=0
@@ -14,7 +14,8 @@ let t=0
     let a1
     let b1=0
 function setup() {
-  createCanvas(800, 500);
+  let canvas = createCanvas(800, 500);
+canvas.parent("p5-canvas-container");
     colorMode(HSB);
   c = color(0);
   a=random(0,width)
@@ -83,10 +84,19 @@ if (d < 50 && mouseIsPressed) {
   g1 = lerp(g1, g, 0.1);
   b_val1=lerp(b_val1, b_val, 0.1)
   //currentFade = lerp(currentFade, targetFade, 0.1);
+ 
   
 
   push();
-  if (d < 800) {
+   if(keyIsPressed&& key === 'l'){
+    speed = 0.5
+  
+  panicX = map(noise(frameCount * 0.05), 0, 1, -400, 400);
+    panicY = map(noise(frameCount * 0.05 + 100), 0, 1, -200, 200);
+    offsetX = panicX;
+    offsetY = panicY;
+     }else{
+      if (d < 800) {
     let strength = map(d, 0, 200, 1, 0);
     offsetX = (x - mouseX) * strength;
     offsetY = (y - mouseY) * strength;
@@ -104,7 +114,9 @@ if (d < 50 && mouseIsPressed) {
       speed = 1.5;
     
     }
-  }
+  } 
+     }
+  
   translate(x + offsetX, y + offsetY);
   let dx = map(abs(mouseX - curX), 0, width, -2, 2);
   let rotx = dx * PI;
