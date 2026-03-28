@@ -33,7 +33,6 @@ function drawCircle(u,v){
   filter(INVERT)
   tint(0,0,255)
   let s=random(1,2)
-  rotate(PI/2,2*PI)
   image(img,u,v,img.width,img.height)
 }
 function mousePressed(){
