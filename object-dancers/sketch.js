@@ -36,17 +36,15 @@ class Nono {
   constructor(startX, startY) {
     this.x = startX;
     this.y = startY;
-    //constructer.head
+    //constructor.head
     this.bArray = [];  
     this.aArray = [];  
-    //this.sArray = []; 
     for (let i = 0; i < 50; i++) {
-      this.bArray[i] = map(i, 0, 40, 0, 140);     
-      //this.sArray[i] = map(i, 0, 40, 5, 30);      
+      this.bArray[i] = map(i, 0, 40, 0, 140);           
       this.aArray[i] = 0;  
       this.head=0 
     }
-    //constructer.arms
+    //constructor.arms
     // this.dArray = [];  
     // this.eArray = [];  
     // this.sArray = []; 
@@ -65,7 +63,7 @@ class Nono {
   update() {
     let speed;
     
-    if (mouseIsPressed === true) {
+    if (mouseIsPressed) {
       speed = 0.3;
       this.bounceY = -30 * sin(frameCount * 0.15)
       //this.c = map(i, 0, 40, 5, 150);
