@@ -26,9 +26,6 @@ class note {
   constructor() {
     this.osc=new p5.TriOsc()
   }
-  update() {
-     
-  }
   playKey(){
     this.osc.start() 
     this.osc.amp(1, 0.05);

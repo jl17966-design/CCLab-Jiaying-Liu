@@ -73,13 +73,13 @@ function draw() {
           let scaleFactor = map(lastSoundLevel, 2, 100, 0.5, 2);
 
           if (soundCounter >= threshold * 8) {
-            f2.push(new flower2(random(width), random(height), scaleFactor));
+            f2.push(new flower2(random(width), random(height), scaleFactor,notePlayer));
             latestFlower = f2[f2.length - 1];
           } else if (soundCounter >= threshold * 4) {
-            f1.push(new flower1(random(width), random(height), scaleFactor));
+            f1.push(new flower1(random(width), random(height), scaleFactor,notePlayer));
             latestFlower = f1[f1.length - 1];
           } else {
-            f.push(new flower(random(width), random(height), scaleFactor));
+            f.push(new flower(random(width), random(height), scaleFactor,notePlayer));
             latestFlower = f[f.length - 1];
           }
 
