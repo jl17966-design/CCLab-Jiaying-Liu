@@ -20,27 +20,14 @@ function setup() {
   let canvas = createCanvas(800, 500);
   canvas.parent("p5-canvas-container");
   mic = new p5.AudioIn();
+  mic.start();
   notePlayer = new note();
   colorMode(HSB, 360, 100, 100, 1);
-}
-
-function mousePressed() {
-  if (!isMicReady) {
-    mic.start();
-    userStartAudio();
-    isMicReady = true;
-  }
 }
 
 function draw() {
   background(bgColor, bgColor, bgColor);
 
-  if (!isMicReady) {
-    fill(0);
-    textAlign(CENTER, CENTER);
-    textSize(24);
-    text("👆 Tap anywhere on the screen to start", width / 2, height / 2);
-  } else {
     //Audio Detection
     let level = mic.getLevel() * 100;
     let soundThreshold = 10;
@@ -144,5 +131,4 @@ function draw() {
       }
     }
   }
-}
 
