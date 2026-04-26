@@ -23,6 +23,7 @@ function setup() {
   mic.start();
   notePlayer = new note();
   colorMode(HSB, 360, 100, 100, 1);
+  userStartAudio();
 }
 
 function draw() {
