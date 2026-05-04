@@ -28,7 +28,36 @@ function setup() {
 
 function draw() {
   background(bgColor, bgColor, bgColor);
+for (let x = 0; x < width; x += 1) {
+  for (let y = 0; y < height; y += 50) {
+  stroke(120, 80, 80);
+    let offsetX = 0;
+    let offsetY = 0;
 
+    // lean (low frequency, static)
+    n = noise(x * 0.1);
+    //dont make all blades of grass lean in the same direction, instead use the same n value to determine if the grass leans left or right
+    let leanDir = map(n, 0, 1, -1, 1);
+    if (leanDir < 0) {
+      offsetX -= n * 20 - 5;
+    }
+    else {
+      offsetX += n * 20 - 5;
+    }
+  
+    
+
+    // height (high frequency sampling yields independent values)
+    offsetY += noise(x * 10) * 100;
+
+    // wind (lower frequency, timed)
+    n = noise(x * 10 + millis() * -0.001);
+    //make wind more light
+    offsetX += n * 10;
+    
+    line(x, y, x + offsetX, 120 + offsetY);
+    }
+  }
     //Audio Detection
     let level = mic.getLevel() * 100;
     let soundThreshold = 10;

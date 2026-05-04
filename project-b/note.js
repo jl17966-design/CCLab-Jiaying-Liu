@@ -23,17 +23,19 @@ let notes = [
   2093.0, // C7
 ];
 class note {
-  constructor() {
+  constructor(freq) {
     this.osc = new p5.TriOsc();
-    this.envelope = new p5.Env()
+    this.envelope = new p5.Envelope()
     this.envelope.setADSR(0.001, 0.5, 0.1, 0.5);
     this.envelope.setRange(1,0);
-    this.randomIndex = floor(random(notes.length));
+    //this.randomIndex = floor(random(notes.length));
+    this.freq = freq; 
+    
 
   }
   playKey() {
     this.osc.start();
-    this.osc.freq(notes[this.randomIndex]);
+    this.osc.freq(this.freq);
     this.envelope.play(this.osc);
   }
   stopKey() {
