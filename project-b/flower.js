@@ -52,8 +52,8 @@ class Flower {
     for (let layer = 0; layer < this.petalLayers; layer = layer + 1) {
       let layerOffset = layer * (TWO_PI / this.petalCount / 2);
       let layerScale = 1 - layer * 0.15;
-      let layerS = this.s + layer * 6;
-      let layerB = this.b - layer * 3;
+      let layerS = this.s + layer * 8;
+      let layerB = this.b + layer * 6;
 
       for (let i = 0; i < this.petalCount; i = i + 1) {
         push();

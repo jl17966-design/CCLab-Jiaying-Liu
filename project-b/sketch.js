@@ -71,7 +71,7 @@ function draw() {
     fill(0, 0, 100);
     textSize(16);
     text("soundCounter: ", 100, 60)
-    if (level > soundThreshold) {
+    if (level > soundThreshold && hands.length == 0) {
       soundCounter++;
       isSpeaking = true;
       silentCounter = 0;
