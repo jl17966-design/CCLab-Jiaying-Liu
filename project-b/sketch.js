@@ -44,8 +44,8 @@ function setup() {
   colorMode(HSB, 360, 100, 100, 1);
   userStartAudio();
   grassBg = new SimpleGrassBackground();
-  bgAudio.setVolume(0.25); 
-  bgAudio.loop(); 
+  bgAudio.setVolume(0.25);
+  bgAudio.loop();
 }
 function gotHands(results) {
   // Save the output to the hands variable
@@ -142,14 +142,14 @@ function draw() {
       let fl = flowers[i];
       if (fl == latestFlower) {
         push();
-    translate(width, 0)
-    scale(-1, 1)
+        translate(width, 0)
+        scale(-1, 1)
         fl.handControl();
         pop()
       }
       push();
-    translate(width, 0)
-    scale(-1, 1)
+      translate(width, 0)
+      scale(-1, 1)
       fl.drawVines(flowers, i);
       fl.update();
       fl.display();
@@ -163,41 +163,41 @@ function draw() {
       }
     }
     push();
-  textAlign(LEFT, TOP);
-  textSize(11);
-  noStroke();
+    textAlign(LEFT, TOP);
+    textSize(11);
+    noStroke();
 
- 
-  fill(0, 0, 0, 0.75);
-  rect(width - 310, height - 180, 300, 150, 8);
 
-  fill(0, 0, 100);
-  stroke(10)
-  textSize(18);
-  text("HOW TO INTERACT", width - 300, height - 160);
+    fill(0, 0, 0, 0.75);
+    rect(width - 310, height - 180, 300, 150, 8);
 
- 
-  textSize(15);
-  stroke(5)
-  fill(0, 0, 90);
-  text("🎤   Speak to bloom flowers.", width - 300, height - 135);
-  text("✋   Use hands to move flowers.", width - 300, height - 82-35);
-  push()
-  textWrap(WORD)
-  text('👊🏻🖐🏻 Make a fist and open to change the size of the flower.', width - 300, height - 64-35,280);
+    fill(0, 0, 100);
+    stroke(10)
+    textSize(18);
+    text("HOW TO INTERACT", width - 300, height - 160);
 
-  describe('The text "👊🏻🖐🏻 Make a fist and open to change the size of the flower" written across two lines.')
-  //text("👊🏻 Make a fist and open to change the size of the flower", width - 300, height - 64);
-  pop()
-  text("🌸   Silence causes decay.", width - 300, height - 46-15);
 
-  fill(0, 0, 0);
-  stroke(30)
-  textSize(20);
-  textAlign(CENTER)
-  text("Preserve this digital memory.", width/2, height - 20-20);
-  pop();
+    textSize(15);
+    stroke(5)
+    fill(0, 0, 90);
+    text("🎤   Speak to bloom flowers.", width - 300, height - 135);
+    text("✋   Use hands to move flowers.", width - 300, height - 82 - 35);
+    push()
+    textWrap(WORD)
+    text('👊🏻🖐🏻 Make a fist and open to change the size of the flower.', width - 300, height - 64 - 35, 280);
+
+    describe('The text "👊🏻🖐🏻 Make a fist and open to change the size of the flower" written across two lines.')
+    //text("👊🏻 Make a fist and open to change the size of the flower", width - 300, height - 64);
+    pop()
+    text("🌸   Silence causes decay.", width - 300, height - 46 - 15);
+
+    fill(0, 0, 0);
+    stroke(30)
+    textSize(20);
+    textAlign(CENTER)
+    text("Preserve this digital memory.", width / 2, height - 20 - 20);
+    pop();
   }
 
-  
+
 }

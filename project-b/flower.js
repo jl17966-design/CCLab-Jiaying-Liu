@@ -1,5 +1,5 @@
 class Flower {
-  constructor(x, y, petalCount, petalLen, petalW, centerSize, h, sf, freq, layer,petalLayers) {
+  constructor(x, y, petalCount, petalLen, petalW, centerSize, h, sf, freq, layer, petalLayers) {
     this.flowerCenterWidth = x;
     this.flowerCenterHeight = y;
     //this.type = type;
@@ -11,17 +11,17 @@ class Flower {
     this.h = h;
     this.note = new note(freq);
     this.note.playKey();
-    this.layer=layer;
-     if (petalLayers < 1) {
+    this.layer = layer;
+    if (petalLayers < 1) {
       this.petalLayers = 1;
     } else {
       this.petalLayers = petalLayers;
     }
 
-    this.s = 40; 
+    this.s = 40;
     this.b = 100;
-    this.alpha = 1.0; 
-    this.isFading = false; 
+    this.alpha = 1.0;
+    this.isFading = false;
     this.hasConnection = false;
     this.lastInteractionFrame = frameCount;
   }
@@ -48,16 +48,16 @@ class Flower {
     translate(this.flowerCenterWidth, this.flowerCenterHeight);
     scale(this.sf);
     noStroke();
-    
+
     for (let layer = 0; layer < this.petalLayers; layer = layer + 1) {
-      let layerOffset = layer * (TWO_PI / this.petalCount / 2);
+      let layerOffset = layer * (2*PI / this.petalCount / 2);
       let layerScale = 1 - layer * 0.15;
       let layerS = this.s + layer * 8;
       let layerB = this.b + layer * 6;
 
       for (let i = 0; i < this.petalCount; i = i + 1) {
         push();
-        rotate(map(i, 0, this.petalCount, 0, TWO_PI) + layerOffset);
+        rotate(map(i, 0, this.petalCount, 0, 2*PI) + layerOffset);
         scale(layerScale);
         fill(this.h, layerS, layerB, this.alpha);
         ellipse(0, this.petalLen * 0.6, this.petalW, this.petalLen);
@@ -94,6 +94,8 @@ class Flower {
     }
   }
 
+
+
   // mouse() {
   //   let distance = dist(mouseX, mouseY, this.flowerCenterWidth, this.flowerCenterHeight);
   //   if (mouseIsPressed && 20 < distance && distance < 50) {
@@ -109,14 +111,30 @@ class Flower {
   //     this.markInteraction()
   //   }
   // }
-  
+
   handControl() {
-    
+
     if (hands.length > 0) {
       let hand = hands[0]; // Use the first detected hand
       let p1 = hand.keypoints[0]; // Thumb or index finger tip
       let p2 = hand.keypoints[12]; // Another finger
       let p3 = hand.keypoints[9];
+      let x = hand.keypoints[9].x;
+      let y = hand.keypoints[9].y;
+      let size = 50;
+
+      noStroke();
+      fill(85, 70, 75);
+
+      arc(x, y, size, size * 2, -0.5 * PI, 0.5 * PI);
+
+      arc(x, y, size, size * 2, 0.5 * PI, PI + 0.5 * PI);
+
+      stroke(85, 60, 50);
+      strokeWeight(3);
+      line(x, y - size/2, x, y + size*1.5);
+      noStroke();
+
       //circle(p3.x, p3.y, 50);
       //let distance = dist(p1.x, p1.y, this.flowerCenterWidth, this.flowerCenterHeight);
       let fingerDist = dist(p1.x, p1.y, p2.x, p2.y);
